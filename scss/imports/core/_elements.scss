@@ -1,0 +1,71 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+}
+.btnmain {
+    border: 1px solid #fff;
+    padding: 12px 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-cl;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    @include transition($t);
+    cursor: pointer;
+    i {
+        display: block;
+        margin-left: 15px;
+        right: 0;
+        position: relative;
+        @include transition($t);
+    }
+    .icon-play {
+        width: 20px;
+        margin-right: 10px;
+    }
+    &:hover {
+        background-color: $yellow-cl;
+        @include transition($t);
+        i {
+            margin-left: 22px;
+            right: -10px;
+            @include transition($t);
+        }
+    }
+    @include xs {
+        padding: 10px 20px;
+    }
+}
+
+.btnmore {
+    font-family: pb;
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    text-decoration: none;
+    color: $text-cl;
+    img {
+        @include transition($t);
+        @include transform(translateX(0));
+        margin-left: 10px;
+    }
+    &:before {
+        content: '';
+        width: 35px;
+        height: 2px;
+        background-color: $yellow-cl;
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+
+    }
+    &:hover {
+        img {
+            @include transform(translateX(10px));
+            @include transition($t)
+        }
+    }
+}

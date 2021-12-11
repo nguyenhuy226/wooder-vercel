@@ -1,0 +1,30 @@
+// css navigator (Menu)
+.nav {
+    width: 100vw;
+    height: calc(100vh - var(--heightHeader));
+    position: fixed;
+    top:var(--heightHeader);
+    left: 0;
+    background-color: #222;
+    z-index: 200;
+    @include mid(true);
+    @include visible(0);
+    @include transition($t);
+    &.active {
+        @include visible();
+        @include transition($t);
+    }
+    ul {
+        width: 100%;
+        li {
+            a{
+                text-decoration: none;
+                color: $white-cl;
+                text-transform: uppercase;
+                text-align: center;
+                display: block;
+                padding: 12px 0 ;
+            }
+        }
+    }
+}

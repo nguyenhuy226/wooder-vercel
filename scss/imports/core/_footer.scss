@@ -1,0 +1,92 @@
+// css footer
+footer {
+    background: $black-bg-cl;
+    padding: 25px 0;
+    color: #b0b0b0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        .logoft {
+            position: absolute;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+        a {
+            color: #b0b0b0;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+    @include xs {
+        .container {
+            flex-direction: column;
+            .logoft {
+                margin: 20px auto;
+                position: initial;
+                left: initial;
+                @include transform(initial);
+            }
+        }
+    }
+}
+.totop {
+    width: 60px;
+    height: 60px;
+    background-color: aqua;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    z-index: 200;
+    cursor: pointer;
+    @include visible(0);
+    @include transition($t);
+    &.active {
+        @include visible();
+        @include transition($t);
+    }
+}
+
+.popup__video {
+    z-index: 400;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.7);
+    @include mid(true);
+    @include visible(0);
+    @include transition($t);
+    &.active {
+        @include visible();
+        @include transition($t);
+    }
+    &-wrap {
+        background: #000;
+        border: 5px solid #eee;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        max-height: 388px;
+        .close {
+            position: absolute;
+            right: -25px;
+            top: -25px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            background:  $white-cl;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
